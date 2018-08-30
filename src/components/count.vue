@@ -1,4 +1,5 @@
 <template>
+  <!-- 这是一个计数组件 -->
   <div  class="count-component">
     <button :class="nowCount === min?'default-button':'act-button'" @mousedown="subEvent">-</button>
     <input type="text" @keyup="inputChange" v-model="nowCount">
