@@ -7,8 +7,7 @@
           <router-link 
             v-for="item in products" 
             :to="{ path: item.path }" 
-            tag="li" 
-            active-class="active"
+            tag="li" active-class="active"
             v-bind:key="item.name"
           >
             {{ item.name }}
@@ -69,7 +68,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .detail-wrap {
   width: 1200px;
   margin: 0 auto;
@@ -109,9 +108,6 @@ export default {
 .sales-board {
   background: #fff;
 }
-.sales-board-form {
-
-}
 .sales-board-intro h2 {
   font-size: 20px;
   padding: 20px;
@@ -132,7 +128,6 @@ export default {
 }
 .sales-board-line-left {
     display: inline-block;
-    width: 100px;
 }
 .sales-board-line-right {
     display: inline-block;
@@ -170,4 +165,3 @@ export default {
     padding: 15px;
 }
 </style>
-

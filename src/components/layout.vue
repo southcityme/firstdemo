@@ -194,9 +194,6 @@ body {
   line-height: 80px;
   background: #e3e4e8;
   clear: both;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 .container {
   margin: 0 auto;

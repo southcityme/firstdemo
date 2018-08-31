@@ -10,7 +10,8 @@
                   购买数量：
               </div>
               <div class="sales-board-line-right">
-                
+                <count-com :min="min" :max="max" @changeNum="goodsPrams('buyNum', $event)"></count-com>
+               
               </div>
           </div>
           <div class="sales-board-line">
@@ -18,7 +19,7 @@
                   产品类型：
               </div>
               <div class="sales-board-line-right">
-                 
+                 <drop-down-select :chooesList="buyTypes" @singlechoosed="goodsPrams('goodsType', $event)"></drop-down-select>
               </div>
           </div>
           <div class="sales-board-line">
@@ -26,7 +27,7 @@
                   有效时间：
               </div>
               <div class="sales-board-line-right">
-                 
+                 <single-selection :caseList="periodList" @singlechoosed="goodsPrams('goodsTime', $event)"></single-selection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -34,7 +35,7 @@
                   产品版本：
               </div>
               <div class="sales-board-line-right">
-                  
+                  <mul-selection></mul-selection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -80,11 +81,60 @@
 </template>
 <script ></script>
 <script>
-
+import countCom from '../../components/countCom'
+import dropDownSelect from '../../components/dropDownSelect'
+import singleSelection from '../../components/singleSelection'
+import mulSelection from '../../components/mulSelection'
 export default {
+  components:{
+    countCom,
+    dropDownSelect,
+    singleSelection,
+    mulSelection
+  },
   data () {
     return {
       initTime:3000,
+      buyNum:2,
+      min:2,
+      max:20,
+      goodsClass:'',
+      goodsTime:'',
+      goodsType:'',
+      buyTypes: [
+        {
+          name: '入门版',
+          id: 5
+        },
+        {
+          name: '中级版',
+          id: 3
+        },
+        {
+          name: '高级版',
+          id: 2
+        }
+      ],
+       periodList: [
+        {
+          name: '半年',
+          id: 5
+        },
+        {
+          name: '一年',
+          id: 4
+        },
+        {
+          name: '三年',
+          id: 2
+        }
+      ],
+
+    }
+  },
+  methods:{
+    goodsPrams (attr,val) {
+      this[attr] = val
     }
   }
 }

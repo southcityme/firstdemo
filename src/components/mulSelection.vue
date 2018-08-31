@@ -2,10 +2,10 @@
   <div  class="single-selection">
     <ul class="single-selection-list">
         <li 
-        :class="{active:choosedIndex === index}" 
-        v-for="(itemd, index) in caseList" 
-        v-bind:key="itemd.name"
-        @click="chooesdEvent (index)"
+            :class="{active:checkChooesd(itemd.id)}" 
+            v-for="(itemd, index) in caseList" 
+            v-bind:key="itemd.name"
+            @click="chooesdEvent (index)"
         >{{itemd.name}}</li>
        
     </ul>
@@ -30,13 +30,22 @@ export default {
     },
     data () {
         return{
-            choosedIndex:0,
+            choosedIndex:[0],
+            choosedIndexId:['']
         }
     },
     methods:{
         chooesdEvent (index) {
-            this.choosedIndex=index
-            this.$emit("singlechoosed",this.caseList[index].id)
+            this.choosedIndex.push(index)
+            this.choosedIndexId.push(this.caseList[index].id)
+            this.$emit("singlechoosed",this.choosedIndexId)
+        },
+        checkChooesd (chooesd) {
+            if(choosedIndexId.indexOf('Sam') > -1){
+                return true
+            }else{
+                return false
+            }
         }
     }
   

@@ -26,8 +26,8 @@ export default {
         }
     },
     watch:{
-        nowCount (){
-            this.$emit(changeNum,this.nowCount)
+        nowCount () {
+            this.$emit("changeNum",this.nowCount)
         }
     },
     methods:{
@@ -77,8 +77,8 @@ export default {
     outline: none;
 }
 .count-component input{
-    height: 22px;
-    line-height: 24px;
+    height: 23px;
+    line-height: 23px;
     text-align: center;
     width:50px;
     border:1px solid #ccc;
