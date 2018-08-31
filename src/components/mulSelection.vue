@@ -31,7 +31,7 @@ export default {
     data () {
         return{
             choosedIndex:[0],
-            choosedIndexId:['']
+            choosedIndexId:[]
         }
     },
     methods:{
@@ -41,7 +41,7 @@ export default {
             this.$emit("singlechoosed",this.choosedIndexId)
         },
         checkChooesd (chooesd) {
-            if(choosedIndexId.indexOf('Sam') > -1){
+            if(this.choosedIndexId.indexOf(chooesd) > -1){
                 return true
             }else{
                 return false
