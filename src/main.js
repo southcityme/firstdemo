@@ -24,7 +24,7 @@ let router = new VueRouter({
 		{
 			path: '/detail',
 			component: DetailPage,
-			redirect: '/detail/analysis',
+			redirect: '/detail/count',
 			children:[
 				{
 					path: 'analysis',
